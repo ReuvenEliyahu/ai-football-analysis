@@ -30,8 +30,8 @@ This repository contains a system for analyzing football matches from video. It 
 
 1. Clone this repository
 ```bash
-git clone https://github.com/[your-username]/ai-football-analysis.git
-cd ai-football-analysis
+git clone https://github.com/ReuvenEliyahu/ai-football-analysis.git
+
 ```
 
 2. Install dependencies (recommended to use a virtual environment)
