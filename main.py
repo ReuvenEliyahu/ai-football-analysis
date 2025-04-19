@@ -9,14 +9,14 @@ from speed_and_distance_estimator import SpeedAndDistance_Estimator
 
 def main():
     # Read Video
-    video_frames = read_video(r"C:\Users\97254\Desktop\Football Analysis\08fd33_4.mp4")
+    video_frames = read_video(r"YOUR LOCATION")
 
     # Use the new model path - replace this with your actual model path
-    tracker = Tracker(r"C:\Users\97254\Desktop\Football Analysis\models\best.pt")
+    tracker = Tracker(r"YOUR LOCATION OF TRAINED MODEL")
 
     # Set read_from_stub to True to save the tracking results
     tracks = tracker.get_object_tracks(video_frames,
-                                       read_from_stub=False,
+                                       read_from_stub=True,
                                        stub_path='stubs/new_track_stubs.pkl')
     # Get object positions
     tracker.add_position_to_tracks(tracks)
@@ -24,7 +24,7 @@ def main():
     # camera movement estimator
     camera_movement_estimator = CameraMovementEstimator(video_frames[0])
     camera_movement_per_frame = camera_movement_estimator.get_camera_movement(video_frames,
-                                                                                read_from_stub=False,
+                                                                                read_from_stub=True,
                                                                                 stub_path='stubs/camera_movement_stub.pkl')
     camera_movement_estimator.add_adjust_positions_to_tracks(tracks, camera_movement_per_frame)
 
